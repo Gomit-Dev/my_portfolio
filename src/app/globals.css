@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+@layer utilities {
+  @keyframes rise {
+    from {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-rise {
+    animation: rise 0.7s ease-out forwards;
+  }
+}
+
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 60vh; 
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
