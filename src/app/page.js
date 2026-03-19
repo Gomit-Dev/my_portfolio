@@ -8,6 +8,10 @@ import Navbar from "@/components/navbar";
 import Projects from "@/components/projects";
 import ThoughtBox from "@/components/thought";
 import Hero from "@/components/welcome-banner";
+import SkillBars from "@/components/SkillBars";
+import TechStack from "@/components/TechStack";
+import Achievements from "@/components/Achievements";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 
 export default function Home() {
   return (
@@ -18,6 +22,10 @@ export default function Home() {
       <LeetCodeChart />
       <GitHubCard />
       <Projects />
+    <SkillBars />
+  <TechStack />
+  <ExperienceTimeline />
+  <Achievements />
       <About />
       <Contact />
       <Footer />
