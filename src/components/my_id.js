@@ -31,15 +31,11 @@ export default function Id() {
                   📧 
               </div>
               <div>
-                 <a href="https://linkedin.com/in/your-profile" target="_blank"
-   class="inline-flex items-center gap-2">
-  
-  <span class="bg-white text-black font-bold px-2 py-1 rounded-sm text-sm shadow">
-    in
-  </span>
-  
-  <span class="text-white font-medium">LinkedIn</span>
-</a>
+                 <a href="https://linkedin.com/in/your-profile" target="_blank" class="inline-flex items-center gap-2">
+                  <span class="bg-white text-black font-bold px-2 py-1 rounded-sm text-sm shadow">
+                    in
+                  </span>
+                </a>
               </div>
             </div>
             <div className="text-center text-white/50 font-serif text-lg">
