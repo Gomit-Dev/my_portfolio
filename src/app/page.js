@@ -19,10 +19,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ThoughtBox />
-      <LeetCodeChart />
+    <SkillBars />
+    <LeetCodeChart />
       <GitHubCard />
       <Projects />
-    <SkillBars />
   <TechStack />
   <ExperienceTimeline />
   <Achievements />
