@@ -28,26 +28,22 @@ export default function Id() {
             </div>
             <div className="text-center text-white/50 font-serif text-lg">
               <div class="flex justify-center items-center gap-3 mt-4">
-
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/in/your-profile" target="_blank"
-     class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
-    in
-  </a>
-
-  <!-- GitHub -->
-  <a href="https://github.com/your-username" target="_blank"
-     class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
-    GH
-  </a>
-
-  <!-- Optional: Twitter / X -->
-  <a href="https://twitter.com/your-handle" target="_blank"
-     class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
-    X
-  </a>
-
-</div>
+            
+                <a href="https://linkedin.com/in/your-profile" target="_blank"
+                   class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
+                  in
+                </a>
+              
+                <a href="https://github.com/your-username" target="_blank"
+                   class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
+                  GH
+                </a>
+              
+                <a href="https://twitter.com/your-handle" target="_blank"
+                   class="bg-white text-black font-bold text-xs px-[6px] py-[2px] rounded-[3px] leading-none hover:scale-110 transition">
+                  X
+                </a>
+              </div>
             </div>
             <div className="text-center text-white/50 font-serif text-lg">
               Lovely Professional University
