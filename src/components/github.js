@@ -20,7 +20,7 @@ export default function GitHubCard() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col justify-between">
+    <div className="bg-black/95 w-full h-full flex flex-col justify-between">
       <h2 className="text-lg md:text-xl font-serif text-white/70 mb-4 border-l-4 border-yellow-400 pl-3">
         GitHub Analytics
       </h2>
