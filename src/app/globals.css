@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
+/* 🔥 Rise Animation (for other sections) */
 @layer utilities {
   @keyframes rise {
     from {
@@ -19,6 +19,58 @@
   }
 }
 
+/* 🔥 Slide Animation (SkillBars upgraded) */
+@layer utilities {
+  @keyframes slideIn {
+    from {
+      transform: translateX(100px) scale(0.85);
+      opacity: 0;
+      filter: blur(6px);
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+/* 🔥 Floating effect (INSANE UI touch) */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 🔥 Glow pulse (for rings) */
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* 🔥 Flip Card (your existing - cleaned slightly) */
 .flip-card {
   perspective: 1200px;
 }
@@ -26,7 +78,7 @@
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 60vh; 
+  height: 60vh;
   transition: transform 0.7s ease;
   transform-style: preserve-3d;
 }
@@ -46,19 +98,4 @@
 
 .flip-back {
   transform: rotateY(180deg);
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(80px) scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-slideIn {
-  animation: slideIn 0.7s ease forwards;
 }
