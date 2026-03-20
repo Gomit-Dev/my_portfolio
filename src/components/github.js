@@ -20,15 +20,13 @@ export default function GitHubCard() {
   }
 
   return (
-    <div className="bg-black w-full h-full flex flex-col gap-6 p-4 rounded-lg">
-      
+    <div className="bg-black w-full h-full flex flex-col gap-8 p-4 rounded-lg">
       <h2 className="text-lg md:text-xl font-serif text-white/70 border-l-4 border-yellow-400 pl-3">
         GitHub Analytics
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-8 items-center w-full">
-
-        <div className="w-full space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="space-y-4">
           {data.languages.map((lang, index) => (
             <div key={index}>
               <div className="flex justify-between text-xs text-white/70 mb-1">
@@ -49,7 +47,7 @@ export default function GitHubCard() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center gap-5">
+        <div className="flex justify-center md:justify-end">
           <div className="w-32 h-32 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.25)]">
             <span className="text-2xl font-bold text-black">
               {data.commits}
@@ -58,15 +56,14 @@ export default function GitHubCard() {
               Contributions
             </span>
           </div>
-
-          <div className="flex gap-6">
-            <Stat icon={<Star className="text-yellow-400" />} value={data.stars} />
-            <Stat icon={<GitPullRequest className="text-blue-400" />} value={data.prs} />
-            <Stat icon={<AlertCircle className="text-red-400" />} value={data.issues} />
-            <Stat icon={<GitCommit className="text-green-400" />} value={data.commits} />
-          </div>
         </div>
+      </div>
 
+      <div className="flex justify-around items-center pt-2">
+        <Stat icon={<Star className="text-yellow-400" />} value={data.stars} />
+        <Stat icon={<GitPullRequest className="text-blue-400" />} value={data.prs} />
+        <Stat icon={<AlertCircle className="text-red-400" />} value={data.issues} />
+        <Stat icon={<GitCommit className="text-green-400" />} value={data.commits} />
       </div>
     </div>
   );
