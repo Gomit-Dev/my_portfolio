@@ -18,8 +18,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ThoughtBox />
-    <SkillBars />
     <CodingStats />
+    <SkillBars />
       <Projects />
   <TechStack />
   <ExperienceTimeline />
