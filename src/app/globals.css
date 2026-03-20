@@ -46,7 +46,7 @@
 
 @keyframes slideIn {
   from {
-    transform: translateX(80px);
+    transform: translateX(60px);
     opacity: 0;
   }
   to {
@@ -58,8 +58,3 @@
 .animate-slideIn {
   animation: slideIn 0.6s ease forwards;
 }
-
-.flip-back {
-  transform: rotateY(180deg);
-}
-
