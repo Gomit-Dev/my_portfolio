@@ -1,69 +1,33 @@
 "use client";
-import { useState, useEffect } from "react";
-import { X } from "lucide-react";
 
-export default function ResumeViewer() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
-
+export default function ResumeSection() {
   return (
-    <>
-      <div className="w-full flex justify-center py-20">
-        <button
-          onClick={() => setOpen(true)}
-          className="px-8 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.3)]"
-        >
-          View Resume
-        </button>
+    <div className="w-full bg-zinc-950/90 py-24 px-4 md:px-10 text-white">
+
+      <h2 className="text-3xl md:text-4xl font-semibold mb-10 border-l-4 border-yellow-400 pl-4">
+        Resume
+      </h2>
+
+      <div className="w-full rounded-xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+
+        <embed
+          src="/resume.pdf"
+          type="application/pdf"
+          className="w-full h-[120vh] md:h-[140vh]"
+        />
+
       </div>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-[999] bg-black/80 backdrop-blur-md flex flex-col animate-zoomIn"
-          onClick={() => setOpen(false)}
+      <div className="flex justify-center mt-8">
+        <a
+          href="/resume.pdf"
+          download
+          className="px-6 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-300 transition"
         >
-          <div
-            className="flex justify-between items-center px-6 py-4 border-b border-white/10"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 className="text-xl text-white font-semibold">My Resume</h2>
+          Download Resume
+        </a>
+      </div>
 
-            <div className="flex items-center gap-4">
-              <a
-                href="/resume.pdf"
-                download
-                className="px-4 py-1 bg-yellow-400 text-black rounded-md hover:bg-yellow-300 transition"
-              >
-                Download
-              </a>
-
-              <button
-                onClick={() => setOpen(false)}
-                className="text-white hover:text-red-400 transition"
-              >
-                <X size={26} />
-              </button>
-            </div>
-          </div>
-
-          <div
-            className="flex-1 w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              src="/resume.pdf"
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 }
