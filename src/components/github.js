@@ -20,15 +20,15 @@ export default function GitHubCard() {
   }
 
   return (
-    <div className="bg-black w-full h-full flex flex-col gap-10 p-6 rounded-xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+    <div className="bg-black w-full h-full flex flex-col gap-10 p-6 rounded-xl">
 
       <h2 className="text-xl md:text-2xl font-serif text-white/80 border-l-4 border-yellow-400 pl-4">
         GitHub Analytics
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-8 items-center">
 
-        <div className="space-y-6">
+        <div className="space-y-5">
           {data.languages.map((lang, index) => (
             <div key={index}>
               <div className="flex justify-between text-sm text-white/70 mb-1">
@@ -38,7 +38,7 @@ export default function GitHubCard() {
 
               <div className="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
                 <div
-                  className="h-2 rounded-full transition-all duration-1000 ease-out animate-grow"
+                  className="h-2 rounded-full transition-all duration-700"
                   style={{
                     width: `${lang.percentage}%`,
                     backgroundColor: lang.color,
@@ -50,28 +50,24 @@ export default function GitHubCard() {
         </div>
 
         <div className="flex justify-center">
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full blur-2xl opacity-40 bg-yellow-400 animate-pulse"></div>
-
-            <div className="w-44 h-44 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(250,204,21,0.4)] relative z-10">
-              <span className="text-4xl font-bold text-black">
-                {data.commits}
-              </span>
-              <span className="text-xs text-black/80 mt-1">
-                Contributions
-              </span>
-            </div>
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(250,204,21,0.35)]">
+            <span className="text-3xl font-bold text-black">
+              {data.commits}
+            </span>
+            <span className="text-xs text-black/80 mt-1">
+              Contributions
+            </span>
           </div>
         </div>
 
       </div>
 
-      <div className="flex justify-between items-center pt-6">
+      <div className="flex justify-around items-center pt-4">
 
-        <Stat icon={<Star size={30} className="text-yellow-400" />} value={data.stars} />
-        <Stat icon={<GitPullRequest size={30} className="text-blue-400" />} value={data.prs} />
-        <Stat icon={<AlertCircle size={30} className="text-red-400" />} value={data.issues} />
-        <Stat icon={<GitCommit size={30} className="text-green-400" />} value={data.commits} />
+        <Stat icon={<Star size={28} className="text-yellow-400" />} value={data.stars} />
+        <Stat icon={<GitPullRequest size={28} className="text-blue-400" />} value={data.prs} />
+        <Stat icon={<AlertCircle size={28} className="text-red-400" />} value={data.issues} />
+        <Stat icon={<GitCommit size={28} className="text-green-400" />} value={data.commits} />
 
       </div>
 
@@ -81,10 +77,8 @@ export default function GitHubCard() {
 
 function Stat({ icon, value }) {
   return (
-    <div className="flex flex-col items-center gap-2 group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-110">
-      <div className="transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-        {icon}
-      </div>
+    <div className="flex flex-col items-center gap-2">
+      {icon}
       <span className="text-lg text-white">{value}</span>
     </div>
   );
