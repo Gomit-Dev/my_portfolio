@@ -2,8 +2,6 @@ import Image from "next/image";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-import GitHubCard from "@/components/github";
-import LeetCodeChart from "@/components/leet_streak";
 import Navbar from "@/components/navbar";
 import Projects from "@/components/projects";
 import ThoughtBox from "@/components/thought";
@@ -22,8 +20,6 @@ export default function Home() {
       <ThoughtBox />
     <SkillBars />
     <CodingStats />
-    <LeetCodeChart />
-      <GitHubCard />
       <Projects />
   <TechStack />
   <ExperienceTimeline />
