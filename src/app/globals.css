@@ -95,17 +95,17 @@
   transform: rotateY(180deg);
 }
 
-@keyframes zoomIn {
+@keyframes fadeUp {
   from {
-    transform: scale(0.9);
     opacity: 0;
+    transform: translateY(40px);
   }
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-zoomIn {
-  animation: zoomIn 0.3s ease;
+.animate-fadeUp {
+  animation: fadeUp 0.6s ease;
 }
