@@ -118,13 +118,15 @@ export default function Welcome() {
       </div>
 
       {/* CTA */}
-      <div className="flex gap-4 mt-12">
+      <div className="flex gap-4 mt-12 flex-wrap">
+      
         <button
           className="px-6 py-2 bg-yellow-500 text-black rounded-md font-semibold hover:bg-yellow-400 transition"
           onClick={() => window.open("https://github.com/Gomit-Dev/", "_blank")}
         >
           View Projects
         </button>
+      
         <button
           className="px-6 py-2 border border-white/40 rounded-md text-white hover:bg-white/10 transition"
           onClick={() => {
@@ -135,6 +137,15 @@ export default function Welcome() {
         >
           Contact Me
         </button>
+      
+        <a
+          href="/resume.pdf"
+          download
+          className="px-6 py-2 bg-white text-black rounded-md font-semibold hover:scale-105 transition"
+        >
+          Download CV
+        </a>
+      
       </div>
     </div>
   );
