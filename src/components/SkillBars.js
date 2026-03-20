@@ -7,64 +7,64 @@ export default function SkillBars() {
     {
       category: "Programming Languages",
       skills: [
-        { name: "Python", level: "Advanced", icon: "/python.svg", color: "rgba(53,114,165,0.4)" },
-        { name: "Java", level: "", icon: "/java.svg", color: "rgba(176,114,25,0.4)" },
-        { name: "C++", level: "", icon: "/cpp.svg", color: "rgba(0,89,156,0.4)" },
-        { name: "JavaScript", level: "Advanced", icon: "/js.svg", color: "rgba(247,223,30,0.4)" },
+        { name: "Python", level: "Advanced", icon: "/python.svg", color: "#3776AB" },
+        { name: "Java", level: "", icon: "/java.svg", color: "#b07219" },
+        { name: "C++", level: "", icon: "/cpp.svg", color: "#00599C" },
+        { name: "JavaScript", level: "Advanced", icon: "/js.svg", color: "#f7df1e" },
       ],
     },
     {
       category: "Frontend Development",
       skills: [
-        { name: "HTML5", level: "Advanced", icon: "/html.svg", color: "rgba(227,76,38,0.4)" },
-        { name: "CSS3", level: "Advanced", icon: "/css.svg", color: "rgba(38,77,228,0.4)" },
-        { name: "Next.js", level: "Intermediate", icon: "/next.svg", color: "rgba(255,255,255,0.25)" },
+        { name: "HTML5", level: "Advanced", icon: "/html.svg", color: "#e34c26" },
+        { name: "CSS3", level: "Advanced", icon: "/css.svg", color: "#264de4" },
+        { name: "Next.js", level: "Intermediate", icon: "/next.svg", color: "#ffffff" },
       ],
     },
     {
       category: "Backend Development",
       skills: [
-        { name: "Node.js", level: "Advanced", icon: "/node.svg", color: "rgba(131,205,41,0.4)" },
-        { name: "Express.js", level: "Intermediate", icon: "/express.svg", color: "rgba(255,255,255,0.25)" },
+        { name: "Node.js", level: "Advanced", icon: "/node.svg", color: "#83cd29" },
+        { name: "Express.js", level: "Intermediate", icon: "/express.svg", color: "#ffffff" },
       ],
     },
     {
       category: "Databases",
       skills: [
-        { name: "MySQL", level: "Intermediate", icon: "/mysql.svg", color: "rgba(0,117,143,0.4)" },
+        { name: "MySQL", level: "Intermediate", icon: "/mysql.svg", color: "#00758f" },
       ],
     },
     {
       category: "Cloud & DevOps",
       skills: [
-        { name: "AWS", level: "Intermediate", icon: "/aws.svg", color: "rgba(255,153,0,0.5)" },
-        { name: "Docker", level: "Intermediate", icon: "/docker.svg", color: "rgba(0,123,186,0.4)" },
+        { name: "AWS", level: "Intermediate", icon: "/aws.svg", color: "#ff9900" },
+        { name: "Docker", level: "Intermediate", icon: "/docker.svg", color: "#007bba" },
       ],
     },
   ];
 
   return (
-    <div className="w-full bg-zinc-950/90 py-24 px-4 md:px-10 text-white">
+    <div className="w-full bg-gradient-to-b from-black via-zinc-950 to-black py-28 px-4 md:px-10 text-white">
 
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-semibold mb-12 border-l-4 border-yellow-400 pl-4">
+      <h2 className="text-4xl md:text-5xl font-semibold mb-16 border-l-4 border-yellow-400 pl-4">
         Skills & Technologies
       </h2>
 
-      <div className="space-y-12">
+      <div className="space-y-16">
         {data.map((row) => (
           <div
             key={row.category}
-            className="grid grid-cols-5 items-center border-t border-white/10 pt-8"
+            className="grid grid-cols-5 items-center border-t border-white/10 pt-10"
           >
             
             {/* LEFT */}
-            <div className="col-span-1 text-center text-white/60 font-semibold">
+            <div className="col-span-1 text-center text-white/60 font-semibold tracking-wide">
               {row.category}
             </div>
 
             {/* RIGHT */}
-            <div className="col-span-4 flex flex-wrap gap-8">
+            <div className="col-span-4 flex flex-wrap gap-10">
 
               {row.skills.map((skill, index) => (
                 <div
@@ -72,30 +72,46 @@ export default function SkillBars() {
                   className="flex flex-col items-center opacity-0 animate-slideIn"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  
-                  {/* 🔥 COLORED BALL */}
-                  <div
-                    className="w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center backdrop-blur-md border border-white/10 transition duration-300 hover:scale-110"
-                    style={{
-                      boxShadow: `0 0 30px ${skill.color}`,
-                      background: "rgba(255,255,255,0.03)",
-                    }}
-                  >
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      width={42}
-                      height={42}
-                      className={`object-contain ${
-                        skill.name === "Next.js" || skill.name === "Express.js"
-                          ? "invert"
-                          : ""
-                      }`}
+
+                  {/* 🔥 INSANE BALL */}
+                  <div className="relative group">
+                    
+                    {/* Glow Ring */}
+                    <div
+                      className="absolute inset-0 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition duration-500"
+                      style={{
+                        background: `radial-gradient(circle, ${skill.color} 0%, transparent 70%)`,
+                      }}
                     />
+
+                    {/* Outer Ring */}
+                    <div
+                      className="absolute inset-0 rounded-full animate-pulse"
+                      style={{
+                        border: `1px solid ${skill.color}`,
+                      }}
+                    />
+
+                    {/* Main Circle */}
+                    <div
+                      className="relative w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl transition duration-500 group-hover:scale-125 group-hover:rotate-3"
+                    >
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={42}
+                        height={42}
+                        className={`object-contain ${
+                          skill.name === "Next.js" || skill.name === "Express.js"
+                            ? "invert"
+                            : ""
+                        }`}
+                      />
+                    </div>
                   </div>
 
                   {/* Name */}
-                  <div className="text-sm mt-3">{skill.name}</div>
+                  <div className="text-sm mt-4 tracking-wide">{skill.name}</div>
 
                   {/* Level */}
                   {skill.level && (
