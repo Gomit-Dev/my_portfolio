@@ -11,7 +11,9 @@ import CodingStats from "@/components/CodingStats";
 import TechStack from "@/components/TechStack";
 import ResumeViewer from "@/components/ResumeViewer";
 import Achievements from "@/components/Achievements";
+import Certificates from "@/components/Certificates";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+
 
 export default function Home() {
   return (
@@ -22,9 +24,7 @@ export default function Home() {
     <CodingStats />
     <SkillBars />
       <Projects />
-  <TechStack />
-  <ExperienceTimeline />
-  <Achievements />
+    <Certificates />
     <ResumeViewer />
       <About />
       <Contact />
