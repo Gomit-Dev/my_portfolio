@@ -17,16 +17,7 @@ export default function Id() {
                 className="object-cover"
               />
             </div>
-            <div className="text-5xl shadow-xl font-serif opacity-70 text-center">
-              Gomit Saha
-            </div>
-            <div className="mb-2">
-              <div className="text-lg opacity-40 text-center">
-                Full Stack Developer
-              </div>
-              <div className="text-4xl text-center text-yellow-500/80">⋆⋆⋆⋆⋆</div>
-            </div>
-            <div className="flex justify-center items-center gap-3">
+                  <div className="flex justify-center items-center gap-3">
               <div className="flex justify-center items-center gap-3 mt-4">
                   
                 <a href="https://linkedin.com/in/your-profile" target="_blank"
@@ -50,6 +41,16 @@ export default function Id() {
                   </svg>
                 </a>  
             </div>
+            <div className="text-5xl shadow-xl font-serif opacity-70 text-center">
+              Gomit Saha
+            </div>
+            <div className="mb-2">
+              <div className="text-lg opacity-40 text-center">
+                Full Stack Developer
+              </div>
+              <div className="text-4xl text-center text-yellow-500/80">⋆⋆⋆⋆⋆</div>
+            </div>
+
             <div className="text-center text-white/50 font-serif text-lg">
               Lovely Professional University
             </div>
