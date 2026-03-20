@@ -95,13 +95,4 @@
   transform: rotateY(180deg);
 }
 
-@keyframes grow {
-  from {
-    width: 0;
-  }
-}
-
-.animate-grow {
-  animation: grow 1.2s ease-out forwards;
-}
 
