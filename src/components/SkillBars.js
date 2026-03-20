@@ -44,7 +44,7 @@ export default function SkillBars() {
   ];
 
   return (
-    <div className="w-full mt-24 px-4 md:px-10 text-white">
+    <div className="w-full bg-zinc-950/90 py-24 px-4 md:px-10 text-white">
 
       {/* Title */}
       <h2 className="text-3xl md:text-4xl font-semibold mb-10 border-l-4 border-yellow-400 pl-4">
