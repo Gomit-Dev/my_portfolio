@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* 🔥 Rise Animation (for other sections) */
 @layer utilities {
   @keyframes rise {
     from {
@@ -19,7 +18,6 @@
   }
 }
 
-/* 🔥 Slide Animation (SkillBars upgraded) */
 @layer utilities {
   @keyframes slideIn {
     from {
@@ -39,7 +37,6 @@
   }
 }
 
-/* 🔥 Floating effect (INSANE UI touch) */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
@@ -50,7 +47,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* 🔥 Glow pulse (for rings) */
 @keyframes glowPulse {
   0% {
     opacity: 0.4;
@@ -70,7 +66,6 @@
   animation: glowPulse 2.5s ease-in-out infinite;
 }
 
-/* 🔥 Flip Card (your existing - cleaned slightly) */
 .flip-card {
   perspective: 1200px;
 }
