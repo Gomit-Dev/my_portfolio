@@ -16,6 +16,34 @@ export default function Certificates() {
       image: "/certificates/cert2.jpg",
       link: "#",
     },
+    {
+      title: "Full Stack Web Development",
+      issuer: "Coursera",
+      date: "2024",
+      image: "/certificates/cert1.jpg",
+      link: "#",
+    },
+    {
+      title: "Data Structures & Algorithms",
+      issuer: "Udemy",
+      date: "2023",
+      image: "/certificates/cert2.jpg",
+      link: "#",
+    },
+    {
+      title: "Full Stack Web Development",
+      issuer: "Coursera",
+      date: "2024",
+      image: "/certificates/cert1.jpg",
+      link: "#",
+    },
+    {
+      title: "Data Structures & Algorithms",
+      issuer: "Udemy",
+      date: "2023",
+      image: "/certificates/cert2.jpg",
+      link: "#",
+    },
   ];
 
   return (
