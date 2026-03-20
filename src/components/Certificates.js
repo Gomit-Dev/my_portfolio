@@ -7,28 +7,26 @@ export default function Certificates() {
   useEffect(() => {
     const cards = document.querySelectorAll(".cert-card");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = entry.target.dataset.index;
+    const handleScroll = () => {
+      const container = containerRef.current;
+      const rect = container.getBoundingClientRect();
 
-          if (entry.isIntersecting) {
-            entry.target.style.transform = `translateY(0px) scale(1)`;
-            entry.target.style.opacity = "1";
-          } else {
-            entry.target.style.transform = `translateY(80px) scale(0.95)`;
-            entry.target.style.opacity = "0";
-          }
-        });
-      },
-      {
-        threshold: 0.4,
-      }
-    );
+      cards.forEach((card, i) => {
+        const progress = Math.min(
+          Math.max((window.innerHeight - rect.top - i * 120) / 400, 0),
+          1
+        );
 
-    cards.forEach((card) => observer.observe(card));
+        card.style.transform = `
+          translateY(${i * -60 * progress}px)
+          scale(${1 - i * 0.05 * progress})
+        `;
+        card.style.zIndex = 100 - i;
+      });
+    };
 
-    return () => cards.forEach((card) => observer.unobserve(card));
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const data = [
@@ -38,7 +36,7 @@ export default function Certificates() {
       image: "/certificates/cert1.jpg",
     },
     {
-      title: "Data Structures & Algorithms",
+      title: "DSA",
       issuer: "Udemy",
       image: "/certificates/cert2.jpg",
     },
@@ -61,29 +59,33 @@ export default function Certificates() {
         Certificates & Courses
       </h2>
 
-      <div ref={containerRef} className="relative flex flex-col items-center gap-32">
+      <div ref={containerRef} className="relative h-[200vh]">
 
-        {data.map((item, i) => (
-          <div
-            key={i}
-            data-index={i}
-            className="cert-card w-full max-w-5xl bg-black border border-white/10 rounded-xl p-6 flex flex-col md:flex-row gap-8 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-all duration-700 ease-out opacity-0"
-            style={{
-              transform: "translateY(80px) scale(0.95)",
-              zIndex: 10 + i,
-            }}
-          >
-            <img
-              src={item.image}
-              className="w-full md:w-1/3 rounded-lg object-cover"
-            />
+        <div className="sticky top-32 flex justify-center">
 
-            <div className="flex flex-col justify-center gap-4">
-              <h3 className="text-2xl font-semibold">{item.title}</h3>
-              <p className="text-white/60">{item.issuer}</p>
-            </div>
+          <div className="relative w-full max-w-5xl h-[400px]">
+
+            {data.map((item, i) => (
+              <div
+                key={i}
+                className="cert-card absolute w-full bg-black border border-white/10 rounded-xl p-6 flex gap-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform duration-300"
+                style={{ top: `${i * 20}px` }}
+              >
+                <img
+                  src={item.image}
+                  className="w-1/3 rounded-lg object-cover"
+                />
+
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="text-white/60 mt-2">{item.issuer}</p>
+                </div>
+              </div>
+            ))}
+
           </div>
-        ))}
+
+        </div>
 
       </div>
     </div>
