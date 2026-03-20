@@ -25,7 +25,7 @@ export default function SkillBars() {
   ];
 
   return (
-    <div className="mt-24 max-w-6xl mx-auto px-4">
+    <div className="mt-24 max-w-6xl mx-auto px-4 bg-black text-white py-10 rounded-xl">
 
       {/* Title */}
       <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10 border-l-4 border-yellow-400 pl-4">
