@@ -9,6 +9,7 @@ import Hero from "@/components/welcome-banner";
 import SkillBars from "@/components/SkillBars";
 import CodingStats from "@/components/CodingStats";
 import TechStack from "@/components/TechStack";
+import ResumeViewer from "@/components/ResumeViewer";
 import Achievements from "@/components/Achievements";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 
@@ -24,6 +25,7 @@ export default function Home() {
   <TechStack />
   <ExperienceTimeline />
   <Achievements />
+    <ResumeViewer />
       <About />
       <Contact />
       <Footer />
