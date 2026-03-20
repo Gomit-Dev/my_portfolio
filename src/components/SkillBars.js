@@ -1,62 +1,107 @@
 "use client";
 
+import Image from "next/image";
+
 export default function SkillBars() {
-  const skillData = [
+  const data = [
     {
-      title: "Programming Languages",
-      skills: ["Python", "Java", "C++", "JavaScript"],
+      category: "Programming Languages",
+      skills: [
+        { name: "Python", level: "Advanced", icon: "/python.png" },
+        { name: "Java", level: "", icon: "/java.png" },
+        { name: "C++", level: "", icon: "/cpp.png" },
+        { name: "JavaScript", level: "Advanced", icon: "/js.png" },
+      ],
     },
     {
-      title: "Frontend Development",
-      skills: ["HTML5", "CSS3", "Next.js"],
+      category: "Frontend Development",
+      skills: [
+        { name: "HTML5", level: "Advanced", icon: "/html.png" },
+        { name: "CSS3", level: "Advanced", icon: "/css.png" },
+        { name: "Next.js", level: "Intermediate", icon: "/next.png" },
+      ],
     },
     {
-      title: "Backend Development",
-      skills: ["Node.js", "Express.js"],
+      category: "Backend Development",
+      skills: [
+        { name: "Node.js", level: "Advanced", icon: "/node.png" },
+        { name: "Express.js", level: "Intermediate", icon: "/express.png" },
+      ],
     },
     {
-      title: "Databases",
-      skills: ["MySQL"],
+      category: "Databases",
+      skills: [
+        { name: "MySQL", level: "Intermediate", icon: "/mysql.png" },
+      ],
     },
     {
-      title: "Cloud & DevOps",
-      skills: ["AWS", "Docker"],
+      category: "Cloud & DevOps",
+      skills: [
+        { name: "AWS", level: "Intermediate", icon: "/aws.png" },
+        { name: "Docker", level: "Intermediate", icon: "/docker.png" },
+      ],
     },
   ];
 
   return (
-    <div className="mt-24 px-4 md:px-10">
+    <div className="w-full mt-24 px-4 md:px-10 text-white">
 
-      <div className="py-10 bg-black/40 border border-white/10 rounded-xl backdrop-blur-sm">
+      {/* Title */}
+      <h2 className="text-3xl md:text-4xl font-semibold mb-10 border-l-4 border-yellow-400 pl-4">
+        Skills & Technologies
+      </h2>
 
-        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10 border-l-4 border-yellow-400 pl-4">
-          Skills & Technologies
-        </h2>
+      {/* Rows */}
+      <div className="space-y-10">
 
-        <div className="grid md:grid-cols-2 gap-10">
+        {data.map((row, i) => (
+          <div
+            key={row.category}
+            className="grid grid-cols-5 items-center border-t border-white/20 pt-6"
+          >
+            
+            {/* LEFT (20%) */}
+            <div className="col-span-1 text-center text-white/70 font-semibold">
+              {row.category}
+            </div>
 
-          {skillData.map((section) => (
-            <div key={section.title}>
-              
-              <h3 className="text-white/70 mb-4 font-semibold">
-                {section.title}
-              </h3>
+            {/* RIGHT (80%) */}
+            <div className="col-span-4 flex flex-wrap gap-6 justify-start">
 
-              <div className="flex flex-wrap gap-3">
-                {section.skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white hover:border-yellow-400 hover:scale-105 hover:bg-white/10 transition duration-200 cursor-default"
-                  >
-                    {skill}
+              {row.skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center opacity-0 animate-slideIn"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {/* Circle Icon */}
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm shadow-lg hover:scale-110 transition">
+                    
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
                   </div>
-                ))}
-              </div>
+
+                  {/* Name */}
+                  <div className="text-sm mt-2">{skill.name}</div>
+
+                  {/* Level */}
+                  {skill.level && (
+                    <div className="text-xs text-yellow-400">
+                      ({skill.level})
+                    </div>
+                  )}
+                </div>
+              ))}
 
             </div>
-          ))}
 
-        </div>
+          </div>
+        ))}
 
       </div>
     </div>
