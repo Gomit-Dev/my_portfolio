@@ -27,6 +27,22 @@ export default function Id() {
               <div className="text-4xl text-center text-yellow-500/80">⋆⋆⋆⋆⋆</div>
             </div>
             <div className="text-center text-white/50 font-serif text-lg">
+              <div>
+                  📧 
+              </div>
+              <div>
+                  <a href="https://linkedin.com/in/your-profile" target="_blank"
+   class="flex items-center gap-2 text-[#0077b5] hover:opacity-80">
+  
+  <span class="bg-[#0077b5] text-white font-bold px-2 py-1 rounded text-sm">
+    in
+  </span>
+  
+  <span class="font-medium">LinkedIn</span>
+</a>
+              </div>
+            </div>
+            <div className="text-center text-white/50 font-serif text-lg">
               Lovely Professional University
             </div>
             <div className="flex justify-between align-bottom">
