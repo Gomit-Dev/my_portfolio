@@ -22,6 +22,7 @@ export default function Home() {
     <SkillBars />
       <Projects />
     <Certificates />
+    <Achievements />
     <ResumeViewer />
       <About />
       <Contact />
