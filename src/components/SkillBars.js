@@ -44,26 +44,23 @@ export default function SkillBars() {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-black via-zinc-950 to-black py-20 md:py-28 px-4 md:px-10 text-white">
+    <div className="w-full bg-gradient-to-b from-black via-zinc-950 to-black py-20 md:py-28 px-4 md:px-16 text-white">
 
       <h2 className="text-3xl md:text-5xl font-semibold mb-12 md:mb-16 border-l-4 border-yellow-400 pl-4">
         Skills & Technologies
       </h2>
 
-      <div className="space-y-14 md:space-y-16">
+      <div className="space-y-16">
         {data.map((row) => (
-          <div
-            key={row.category}
-            className="border-t border-white/10 pt-8 md:pt-10"
-          >
-            
+          <div key={row.category} className="border-t border-white/10 pt-10">
+
             {/* CATEGORY */}
-            <div className="mb-6 text-lg md:text-xl text-white/70 font-semibold text-center md:text-left">
+            <div className="mb-8 text-xl md:text-2xl text-white/70 font-semibold text-center md:text-left">
               {row.category}
             </div>
 
             {/* SKILLS */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-6 md:gap-10">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 place-items-center">
 
               {row.skills.map((skill, index) => (
                 <div
@@ -88,14 +85,12 @@ export default function SkillBars() {
                       }}
                     />
 
-                    <div
-                      className="relative w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl transition duration-300 group-hover:scale-110"
-                    >
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl transition duration-300 group-hover:scale-110">
                       <Image
                         src={skill.icon}
                         alt={skill.name}
-                        width={36}
-                        height={36}
+                        width={40}
+                        height={40}
                         className={`object-contain ${
                           skill.name === "Next.js" || skill.name === "Express.js"
                             ? "invert"
