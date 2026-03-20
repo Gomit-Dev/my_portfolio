@@ -44,17 +44,21 @@
   border-radius: 1rem;
 }
 
+.flip-back {
+  transform: rotateY(180deg);
+}
+
 @keyframes slideIn {
   from {
-    transform: translateX(60px);
+    transform: translateX(80px) scale(0.9);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
 }
 
 .animate-slideIn {
-  animation: slideIn 0.6s ease forwards;
+  animation: slideIn 0.7s ease forwards;
 }
