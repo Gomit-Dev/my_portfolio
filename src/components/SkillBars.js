@@ -25,36 +25,38 @@ export default function SkillBars() {
   ];
 
   return (
-    <div className="mt-24 max-w-6xl mx-auto px-4 bg-black text-white py-10 rounded-xl">
+    <div className="mt-24 px-4 md:px-10">
 
-      {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10 border-l-4 border-yellow-400 pl-4">
-        Skills & Technologies
-      </h2>
+      <div className="py-10 bg-black/40 border border-white/10 rounded-xl backdrop-blur-sm">
 
-      {/* Grid */}
-      <div className="grid md:grid-cols-2 gap-10">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-10 border-l-4 border-yellow-400 pl-4">
+          Skills & Technologies
+        </h2>
 
-        {skillData.map((section) => (
-          <div key={section.title}>
-            
-            <h3 className="text-white/70 mb-4 font-semibold">
-              {section.title}
-            </h3>
+        <div className="grid md:grid-cols-2 gap-10">
 
-            <div className="flex flex-wrap gap-3">
-              {section.skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white hover:border-yellow-400 hover:scale-105 transition duration-200"
-                >
-                  {skill}
-                </div>
-              ))}
+          {skillData.map((section) => (
+            <div key={section.title}>
+              
+              <h3 className="text-white/70 mb-4 font-semibold">
+                {section.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                {section.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-white hover:border-yellow-400 hover:scale-105 hover:bg-white/10 transition duration-200 cursor-default"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+
             </div>
+          ))}
 
-          </div>
-        ))}
+        </div>
 
       </div>
     </div>
