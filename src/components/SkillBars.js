@@ -44,35 +44,38 @@ export default function SkillBars() {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-black via-zinc-950 to-black py-20 md:py-28 px-4 md:px-16 text-white">
+    <div className="w-full bg-gradient-to-b from-black via-zinc-950 to-black py-28 px-4 md:px-10 text-white">
 
-      <h2 className="text-3xl md:text-5xl font-semibold mb-12 md:mb-16 border-l-4 border-yellow-400 pl-4">
+      <h2 className="text-4xl md:text-5xl font-semibold mb-16 border-l-4 border-yellow-400 pl-4">
         Skills & Technologies
       </h2>
 
       <div className="space-y-16">
         {data.map((row) => (
-          <div key={row.category} className="border-t border-white/10 pt-10">
-
-            {/* CATEGORY */}
-            <div className="mb-8 text-xl md:text-2xl text-white/70 font-semibold text-center md:text-left">
+          <div
+            key={row.category}
+            className="grid grid-cols-1 md:grid-cols-5 items-center border-t border-white/10 pt-10"
+          >
+            
+            {/* LEFT */}
+            <div className="md:col-span-1 text-center md:text-left text-white/60 font-semibold tracking-wide mb-6 md:mb-0">
               {row.category}
             </div>
 
-            {/* SKILLS */}
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 place-items-center">
+            {/* RIGHT */}
+            <div className="md:col-span-4 flex flex-wrap justify-center md:justify-start gap-6 md:gap-10">
 
               {row.skills.map((skill, index) => (
                 <div
                   key={skill.name}
                   className="flex flex-col items-center opacity-0 animate-slideIn"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.15}s` }}
                 >
 
                   <div className="relative group">
                     
                     <div
-                      className="absolute inset-0 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition"
+                      className="absolute inset-0 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition duration-500"
                       style={{
                         background: `radial-gradient(circle, ${skill.color} 0%, transparent 70%)`,
                       }}
@@ -85,12 +88,12 @@ export default function SkillBars() {
                       }}
                     />
 
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl transition duration-300 group-hover:scale-110">
+                    <div className="relative w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl transition duration-500 group-hover:scale-125 group-hover:rotate-3">
                       <Image
                         src={skill.icon}
                         alt={skill.name}
-                        width={40}
-                        height={40}
+                        width={36}
+                        height={36}
                         className={`object-contain ${
                           skill.name === "Next.js" || skill.name === "Express.js"
                             ? "invert"
