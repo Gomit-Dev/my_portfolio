@@ -13,97 +13,69 @@ export default function GitHubCard() {
 
   if (!data) {
     return (
-      <div className="bg-black py-28 text-center text-white/40">
+      <div className="w-full h-full flex items-center justify-center text-white/40">
         Loading GitHub data...
       </div>
     );
   }
 
   return (
-    <section className="bg-black py-16 " id="Work">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Main Card */}
-        <div className="bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-2xl p-8 shadow-[0_0_30px_rgba(255,193,7,0.06)]">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            {/* LEFT SIDE */}
-            <div>
-              <h2 className="text-2xl font-serif text-white mb-6">
-                GitHub Analytics
-              </h2>
+    <div className="w-full h-full flex flex-col justify-between">
+      <h2 className="text-lg md:text-xl font-serif text-white/70 mb-4 border-l-4 border-yellow-400 pl-3">
+        GitHub Analytics
+      </h2>
 
-              <div className="space-y-4">
-                {data.languages.map((lang, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between text-xs text-white/70 mb-1">
-                      <span>{lang.name}</span>
-                      <span>{lang.percentage}%</span>
-                    </div>
-
-                    <div className="w-full bg-zinc-800/70 h-1.5 rounded-full overflow-hidden">
-                      <div
-                        className="h-1.5 rounded-full transition-all duration-700"
-                        style={{
-                          width: `${lang.percentage}%`,
-                          backgroundColor: lang.color,
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="flex flex-col items-center">
-              {/* Smaller Circle */}
-              <div className="relative">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.25)]">
-                  <span className="text-3xl font-bold text-black">
-                    {data.commits}
-                  </span>
-
-                  <span className="text-[10px] text-black/80 mt-1 tracking-wide">
-                    Contributions
-                  </span>
+      <div className="flex flex-col md:flex-row gap-6 items-center justify-between w-full">
+        <div className="w-full">
+          <div className="space-y-3">
+            {data.languages.map((lang, index) => (
+              <div key={index}>
+                <div className="flex justify-between text-xs text-white/70 mb-1">
+                  <span>{lang.name}</span>
+                  <span>{lang.percentage}%</span>
                 </div>
 
-                <div className="absolute inset-0 rounded-full blur-2xl bg-yellow-500/10 -z-10" />
-              </div>
-
-              {/* Stats Single Line */}
-              <div className="mt-6 flex items-center justify-center gap-8">
-                <div className="flex flex-col items-center group">
-                  <Star className="w-3.5 h-3.5 text-yellow-400 mb-1" />
-                  <span className="text-white text-sm font-semibold">
-                    {data.stars}
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group">
-                  <GitPullRequest className="w-3.5 h-3.5 text-blue-400 mb-1" />
-                  <span className="text-white text-sm font-semibold">
-                    {data.prs}
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group">
-                  <AlertCircle className="w-3.5 h-3.5 text-red-400 mb-1" />
-                  <span className="text-white text-sm font-semibold">
-                    {data.issues}
-                  </span>
-                </div>
-
-                <div className="flex flex-col items-center group">
-                  <GitCommit className="w-3.5 h-3.5 text-green-400 mb-1" />
-                  <span className="text-white text-sm font-semibold">
-                    {data.commits}
-                  </span>
+                <div className="w-full bg-zinc-800/70 h-1.5 rounded-full overflow-hidden">
+                  <div
+                    className="h-1.5 rounded-full transition-all duration-700"
+                    style={{
+                      width: `${lang.percentage}%`,
+                      backgroundColor: lang.color,
+                    }}
+                  />
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center">
+          <div className="w-32 h-32 md:w-36 md:h-36 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.25)]">
+            <span className="text-2xl font-bold text-black">
+              {data.commits}
+            </span>
+            <span className="text-[10px] text-black/80 mt-1">
+              Contributions
+            </span>
+          </div>
+
+          <div className="mt-5 flex gap-6">
+            <Stat icon={<Star className="text-yellow-400" />} value={data.stars} />
+            <Stat icon={<GitPullRequest className="text-blue-400" />} value={data.prs} />
+            <Stat icon={<AlertCircle className="text-red-400" />} value={data.issues} />
+            <Stat icon={<GitCommit className="text-green-400" />} value={data.commits} />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  );
+}
+
+function Stat({ icon, value }) {
+  return (
+    <div className="flex flex-col items-center text-sm">
+      {icon}
+      <span className="text-white">{value}</span>
+    </div>
   );
 }
