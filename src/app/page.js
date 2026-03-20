@@ -9,6 +9,7 @@ import Projects from "@/components/projects";
 import ThoughtBox from "@/components/thought";
 import Hero from "@/components/welcome-banner";
 import SkillBars from "@/components/SkillBars";
+import CodingStats from "@/components/CodingStats";
 import TechStack from "@/components/TechStack";
 import Achievements from "@/components/Achievements";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <ThoughtBox />
     <SkillBars />
+    <CodingStats />
     <LeetCodeChart />
       <GitHubCard />
       <Projects />
