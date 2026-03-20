@@ -32,13 +32,13 @@ export default function Id() {
               </div>
               <div>
                  <a href="https://linkedin.com/in/your-profile" target="_blank"
-   class="flex items-center gap-2 bg-[#0077b5] text-white px-4 py-2 rounded-lg hover:bg-[#005582] transition">
+   class="inline-flex items-center gap-2">
   
-  <span class="bg-white text-[#0077b5] font-bold px-2 py-0.5 rounded">
+  <span class="bg-white text-black font-bold px-2 py-1 rounded-sm text-sm shadow">
     in
   </span>
   
-  LinkedIn
+  <span class="text-white font-medium">LinkedIn</span>
 </a>
               </div>
             </div>
