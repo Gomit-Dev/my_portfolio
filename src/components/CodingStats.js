@@ -11,11 +11,11 @@ export default function CodingStats() {
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl flex">
+        <div className="bg-black/95 border border-white/60 rounded-xl p-6 backdrop-blur-xl flex">
           <GitHubCard />
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl flex">
+        <div className="bg-black/95 border border-white/60 rounded-xl p-6 backdrop-blur-xl flex">
           <LeetCodeChart />
         </div>
       </div>
