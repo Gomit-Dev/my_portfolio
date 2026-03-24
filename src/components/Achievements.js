@@ -3,24 +3,24 @@
 export default function Achievements() {
   const data = [
     {
-      title: "LeetCode 300+ Problems",
-      desc: "Solved 300+ DSA problems",
+      title: "100+ DSA Problems Solved",
+      desc: "Solved problems across LeetCode & GeeksforGeeks, strengthening core data structures and problem-solving skills.",
       image: "/badges/leetcode.png",
     },
     {
-      title: "GitHub 100+ Contributions",
-      desc: "Active open-source contributor",
+      title: "HackerRank 3⭐ in C++",
+      desc: "Earned a Silver badge with consistent coding performance and strong fundamentals in C++.",
+      image: "/badges/hackerrank.png",
+    },
+    {
+      title: "Android Development Progress",
+      desc: "Reached Level 12 and earned 5 badges on Android Studio by completing core development modules.",
+      image: "/badges/android.png",
+    },
+    {
+      title: "12+ GitHub Projects",
+      desc: "Built and published multiple full-stack projects showcasing real-world development and deployment skills.",
       image: "/badges/github.png",
-    },
-    {
-      title: "Hackathon Finalist",
-      desc: "Top 10 in national hackathon",
-      image: "/badges/hackathon.png",
-    },
-    {
-      title: "5⭐ Problem Solver",
-      desc: "Strong problem-solving skills",
-      image: "/badges/star.png",
     },
   ];
 
@@ -36,10 +36,9 @@ export default function Achievements() {
         {data.map((item, i) => (
           <div
             key={i}
-            className="group bg-black/90 border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center gap-4 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)] hover:-translate-y-2"
+            className="group bg-black border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)] hover:-translate-y-2"
           >
 
-            {/* ICON */}
             <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center overflow-hidden">
               <img
                 src={item.image}
@@ -48,12 +47,10 @@ export default function Achievements() {
               />
             </div>
 
-            {/* TITLE */}
             <h3 className="text-lg font-semibold leading-tight">
               {item.title}
             </h3>
 
-            {/* DESC */}
             <p className="text-sm text-white/60">
               {item.desc}
             </p>
