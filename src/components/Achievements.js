@@ -5,22 +5,22 @@ export default function Achievements() {
     {
       title: "100+ DSA Problems Solved",
       desc: "Solved problems across LeetCode & GeeksforGeeks, strengthening core data structures and problem-solving skills.",
-      image: "/badges/leetcode.png",
+      image: "/badges/leetcode.svg",
     },
     {
       title: "HackerRank 3⭐ in C++",
       desc: "Earned a Silver badge with consistent coding performance and strong fundamentals in C++.",
-      image: "/badges/hackerrank.png",
+      image: "/badges/hackerrank.svg",
     },
     {
       title: "Android Development Progress",
       desc: "Reached Level 12 and earned 5 badges on Android Studio by completing core development modules.",
-      image: "/badges/android.png",
+      image: "/badges/android.svg",
     },
     {
       title: "12+ GitHub Projects",
       desc: "Built and published multiple full-stack projects showcasing real-world development and deployment skills.",
-      image: "/badges/github.png",
+      image: "/badges/github.svg",
     },
   ];
 
@@ -39,19 +39,22 @@ export default function Achievements() {
             className="group bg-black border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)] hover:-translate-y-2"
           >
 
-            <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center overflow-hidden">
+            {/* WHITE BADGE */}
+            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md group-hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-10 h-10 object-contain transition duration-300 group-hover:scale-110"
+                className="w-8 h-8 object-contain transition duration-300 group-hover:scale-110"
               />
             </div>
 
+            {/* TITLE */}
             <h3 className="text-lg font-semibold leading-tight">
               {item.title}
             </h3>
 
-            <p className="text-sm text-white/60">
+            {/* DESC */}
+            <p className="text-sm text-white/60 leading-relaxed">
               {item.desc}
             </p>
 
