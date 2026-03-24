@@ -7,9 +7,11 @@ export default function SkillBars() {
     {
       category: "Programming Languages",
       skills: [
-        { name: "Python", level: "Advanced", icon: "/python.svg", color: "#3776AB" },
-        { name: "Java", level: "", icon: "/java.svg", color: "#b07219" },
-        { name: "C++", level: "", icon: "/cpp.svg", color: "#00599C" },
+        { name: "Python", level: "Intermediate", icon: "/python.svg", color: "#3776AB" },
+        { name: "Java", level: "Intermediate", icon: "/java.svg", color: "#b07219" },
+        { name: "C++", level: "Advanced", icon: "/cpp.svg", color: "#00599C" },
+        { name: "C", level: "Intermediate", icon: "/c.svg", color: "#A8B9CC" },
+        { name: "Kotlin", level: "Advanced", icon: "/kotlin.svg", color: "#7F52FF" },
         { name: "JavaScript", level: "Advanced", icon: "/js.svg", color: "#f7df1e" },
       ],
     },
@@ -18,7 +20,9 @@ export default function SkillBars() {
       skills: [
         { name: "HTML5", level: "Advanced", icon: "/html.svg", color: "#e34c26" },
         { name: "CSS3", level: "Advanced", icon: "/css.svg", color: "#264de4" },
+        { name: "React", level: "Intermediate", icon: "/react.svg", color: "#61DAFB" },
         { name: "Next.js", level: "Intermediate", icon: "/next.svg", color: "#ffffff" },
+        { name: "Tailwind", level: "Advanced", icon: "/tailwind.svg", color: "#38BDF8" },
       ],
     },
     {
@@ -26,19 +30,25 @@ export default function SkillBars() {
       skills: [
         { name: "Node.js", level: "Advanced", icon: "/node.svg", color: "#83cd29" },
         { name: "Express.js", level: "Intermediate", icon: "/express.svg", color: "#ffffff" },
+        { name: "PHP", level: "Intermediate", icon: "/php.svg", color: "#777BB4" },
       ],
     },
     {
       category: "Databases",
       skills: [
         { name: "MySQL", level: "Intermediate", icon: "/mysql.svg", color: "#00758f" },
+        { name: "MongoDB", level: "Intermediate", icon: "/mongodb.svg", color: "#47A248" },
+        { name: "Firebase", level: "Advanced", icon: "/firebase.svg", color: "#FFCA28" },
       ],
     },
     {
       category: "Cloud & DevOps",
       skills: [
-        { name: "AWS", level: "Intermediate", icon: "/aws.svg", color: "#ff9900" },
-        { name: "Docker", level: "Intermediate", icon: "/docker.svg", color: "#007bba" },
+        { name: "AWS", level: "Basic", icon: "/aws.svg", color: "#ff9900" },
+        { name: "Docker", level: "Basic", icon: "/docker.svg", color: "#007bba" },
+        { name: "Vercel", level: "Intermediate", icon: "/vercel.svg", color: "#ffffff" },
+        { name: "Linux", level: "Intermediate", icon: "/linux.svg", color: "#FCC624" },
+        { name: "GitHub", level: "Intermediate", icon: "/github.svg", color: "#ffffff" },
       ],
     },
   ];
@@ -57,12 +67,10 @@ export default function SkillBars() {
             className="grid grid-cols-1 md:grid-cols-5 items-center border-t border-white/10 pt-10"
           >
             
-            {/* LEFT */}
             <div className="md:col-span-1 text-center md:text-left text-white/60 font-semibold tracking-wide mb-6 md:mb-0">
               {row.category}
             </div>
 
-            {/* RIGHT */}
             <div className="md:col-span-4 flex flex-wrap justify-center md:justify-start gap-6 md:gap-10">
 
               {row.skills.map((skill, index) => (
@@ -95,7 +103,10 @@ export default function SkillBars() {
                         width={36}
                         height={36}
                         className={`object-contain ${
-                          skill.name === "Next.js" || skill.name === "Express.js"
+                          skill.name === "Next.js" ||
+                          skill.name === "Express.js" ||
+                          skill.name === "GitHub" ||
+                          skill.name === "Vercel"
                             ? "invert"
                             : ""
                         }`}
@@ -107,11 +118,10 @@ export default function SkillBars() {
                     {skill.name}
                   </div>
 
-                  {skill.level && (
-                    <div className="text-[10px] md:text-xs text-yellow-400/90">
-                      ({skill.level})
-                    </div>
-                  )}
+                  <div className="text-[10px] md:text-xs text-yellow-400/90">
+                    ({skill.level})
+                  </div>
+
                 </div>
               ))}
 
