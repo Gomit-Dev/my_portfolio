@@ -18,7 +18,7 @@ export default function Certificates() {
       image: "/Certificates/Screenshot 2026-03-24 111747.png",
       description:
         "Built strong fundamentals of C# programming including object-oriented programming, .NET basics, and problem-solving techniques.",
-      link: "#",
+      link: "https://www.freecodecamp.org/certification/fcce27bf513-a343-4629-a0ea-34aef662ac12/foundational-c-sharp-with-microsoft",
     },
     {
       title: "Google IT Automation with Python",
