@@ -2,38 +2,43 @@ import Image from "next/image";
 
 export default function Projects() {
   const projects = [
-    {
-      category: "Full Stack",
-      title: "Task Manager Pro",
-      tagline: "Auth-based productivity platform",
-      image: "/p1.png",
-      tech: ["Next.js", "Node.js", "MongoDB"],
-      features: ["🔐 Auth", "📦 REST API", "📱 Responsive"],
-      description:
-        "Helps users manage daily tasks securely with authentication, database persistence, and scalable backend architecture.",
-    },
-    {
-      category: "Frontend",
-      title: "Weather Dashboard",
-      tagline: "Real-time weather insights using API",
-      image: "/p2.png",
-      tech: ["React", "Tailwind", "API"],
-      features: ["🌍 Live Data", "⚡ Fast UI", "📱 Responsive"],
-      description:
-        "Provides real-time weather information using external APIs, helping users plan their day effectively.",
-    },
-    {
-      category: "Backend",
-      title: "Blog API System",
-      tagline: "Secure RESTful API architecture",
-      image: "/p3.png",
-      tech: ["Node.js", "Express", "MongoDB"],
-      features: ["🔐 JWT Auth", "📦 CRUD", "⚙️ Scalable"],
-      description:
-        "A backend system designed for blog platforms, solving content management challenges with secure and structured APIs.",
-    },
-  ];
-
+  {
+    category: "Full Stack",
+    title: "UniGather",
+    tagline: "Local event discovery & management platform",
+    image: "/unigather.png",
+    tech: ["PHP", "MySQL", "Tailwind"],
+    features: ["🔐 Auth", "📅 Events", "👨‍💼 Admin"],
+    description:
+      "A platform to discover, create, and manage local events with user authentication and admin control.",
+    github: "https://github.com/Gomit-Dev/UniGather",
+    live: "#",
+  },
+  {
+    category: "AI / Backend",
+    title: "FraudShield AI",
+    tagline: "AI-powered fraud detection system",
+    image: "/fraudshield.png",
+    tech: ["Python", "Machine Learning", "API"],
+    features: ["🤖 AI Model", "📊 Detection", "⚡ Scalable"],
+    description:
+      "Detects fraudulent transactions using machine learning models and provides scalable API integration.",
+    github: "https://github.com/Gomit-Dev/FraudShield_AI",
+    live: "#",
+  },
+  {
+    category: "Full Stack",
+    title: "SmartCart",
+    tagline: "Modern e-commerce shopping system",
+    image: "/smartcart.png",
+    tech: ["React", "Node.js", "MongoDB"],
+    features: ["🛒 Cart", "💳 Checkout", "📦 Orders"],
+    description:
+      "A full-featured e-commerce platform with cart management, secure checkout, and order tracking.",
+    github: "https://github.com/Gomit-Dev/SmartCart",
+    live: "#",
+  },
+];
   return (
     <div className=" bg-zinc-950/90 py-20" id ="Project">
       <div className="max-w-6xl mx-auto px-6">
@@ -80,18 +85,19 @@ export default function Projects() {
                   </div>
 
                   {/* Bottom Section */}
-                  <div>
-                    {/* Tech Pills */}
-                    <div className="flex flex-wrap justify-center gap-2 mt-2">
-                      {project.tech.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="text-xs bg-white/10 px-3 py-1 rounded-md text-white/70"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="flex gap-6 text-sm font-semibold">
+                    <a href={project.github} target="_blank">
+                      <button className="bg-black text-yellow-400 px-4 py-2 rounded-lg hover:bg-neutral-900 transition">
+                        GitHub
+                      </button>
+                    </a>
+                  
+                    <a href={project.live} target="_blank">
+                      <button className="bg-black text-yellow-400 px-4 py-2 rounded-lg hover:bg-neutral-900 transition">
+                        Live Demo
+                      </button>
+                    </a>
+                  </div>
 
                     {/* Features */}
                     <div className="mt-5 text-xs text-white/50 flex justify-center gap-4">
