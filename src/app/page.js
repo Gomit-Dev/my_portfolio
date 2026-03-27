@@ -17,15 +17,15 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <ThoughtBox />
+    <About />    
     <CodingStats />
     <SkillBars />
       <Projects />
     <Certificates />
     <Achievements />
     <ResumeViewer />
-      <About />
-      <Contact />
+    <ThoughtBox />
+    <Contact />
       <Footer />
     </>
   );
