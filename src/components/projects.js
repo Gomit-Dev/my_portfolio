@@ -36,7 +36,7 @@ export default function Projects() {
       description:
         "A full-featured e-commerce platform with cart management, secure checkout, and order tracking.",
       github: "https://github.com/Gomit-Dev/SmartCart",
-      live: "#",
+      live: "https://gomit-dev.github.io/FraudShield_AI/",
     },
   ];
 
