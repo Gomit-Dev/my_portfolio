@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Projects() {
+  const [hovered, setHovered] = useState(null);
+
   const projects = [
     {
       category: "Full Stack",
@@ -19,10 +22,10 @@ export default function Projects() {
       title: "FraudShield AI",
       tagline: "AI-powered fraud detection system",
       image: "/fraudshield.png",
-      tech: ["Python", "Machine Learning", "API"],
+      tech: ["Python", "ML", "API"],
       features: ["🤖 AI Model", "📊 Detection", "⚡ Scalable"],
       description:
-        "Detects fraudulent transactions using machine learning models and provides scalable API integration.",
+        "Detects fraudulent transactions using machine learning models and scalable APIs.",
       github: "https://github.com/Gomit-Dev/FraudShield_AI",
       live: "#",
     },
@@ -34,7 +37,7 @@ export default function Projects() {
       tech: ["React", "Node.js", "MongoDB"],
       features: ["🛒 Cart", "💳 Checkout", "📦 Orders"],
       description:
-        "A full-featured e-commerce platform with cart management, secure checkout, and order tracking.",
+        "A complete e-commerce platform with cart, checkout, and order management.",
       github: "https://github.com/Gomit-Dev/SmartCart",
       live: "#",
     },
@@ -51,17 +54,21 @@ export default function Projects() {
               key={index}
               className="w-[320px] h-[420px]"
               style={{ perspective: "1000px" }}
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered(null)}
             >
               <div
                 className="relative w-full h-full transition-transform duration-500"
                 style={{
                   transformStyle: "preserve-3d",
+                  transform:
+                    hovered === index ? "rotateY(180deg)" : "rotateY(0deg)",
                 }}
               >
 
                 {/* FRONT */}
                 <div
-                  className="absolute w-full h-full bg-zinc-900 border border-white/10 rounded-2xl p-8 flex flex-col justify-between text-center shadow-xl hover:scale-105 transition"
+                  className="absolute w-full h-full bg-zinc-900 border border-white/10 rounded-2xl p-8 flex flex-col justify-between text-center shadow-xl"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div>
@@ -92,7 +99,6 @@ export default function Projects() {
                   </div>
 
                   <div>
-                    {/* TECH */}
                     <div className="flex flex-wrap justify-center gap-2">
                       {project.tech.map((tech, i) => (
                         <span
@@ -104,14 +110,12 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    {/* FEATURES */}
                     <div className="mt-5 text-xs text-white/50 flex justify-center gap-4">
                       {project.features.map((feature, i) => (
                         <span key={i}>{feature}</span>
                       ))}
                     </div>
 
-                    {/* BUTTONS */}
                     <div className="flex gap-4 justify-center mt-6 text-sm font-semibold">
                       <a href={project.github} target="_blank">
                         <button className="bg-black text-yellow-400 px-4 py-2 rounded-lg hover:bg-neutral-900 transition">
@@ -156,13 +160,6 @@ export default function Projects() {
                 </div>
 
               </div>
-
-              {/* HOVER FLIP */}
-              <style jsx>{`
-                div:hover > div {
-                  transform: rotateY(180deg);
-                }
-              `}</style>
             </div>
           ))}
         </div>
